@@ -538,4 +538,6 @@ RUN /opt/R/${R_VERSION}/bin/R -e 'install.packages("abind", repos="https://cran.
     /opt/R/${R_VERSION}/bin/R -e 'install.packages("zip", repos="https://cran.rstudio.com")' && \
     /opt/R/${R_VERSION}/bin/R -e 'install.packages("zoo", repos="https://cran.rstudio.com")'
     
-    
+RUN apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+RUN sh -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64 /" > /etc/apt/sources.list.d/cuda.list'
+RUN apt-get update && apt-get install -y cuda-toolkit-11-0
