@@ -1,5 +1,7 @@
 # Adding system packages to the r-session-complete image
 FROM rstudio/r-session-complete:bionic-1.4.1717-3
+ENV http_proxy=http://10.119.210.26:8080
+ENV https_proxy=http://10.119.210.26:8080
 
 # Set versions and platforms
 
